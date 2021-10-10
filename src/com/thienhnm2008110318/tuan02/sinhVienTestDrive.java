@@ -28,14 +28,20 @@ public class sinhVienTestDrive {
                 System.out.println("Đã nhập thành công, vui lòng nhập thông tin sinh viên tiếp theo!");
                 System.out.println("-------------------");
             }
+
+            
         }
         input.close();
 
-        for(int i = 0; i < SinhVien.length; i++) {
+        for(sinhVien Student : SinhVien) {
             System.out.println("---");
             System.out.println("In thông tin sinh viên:");
 
-            SinhVien[i].inThongTin();
+            Student.inThongTin();
         }
+        
+        //List list = Arrays.asList(sinhVien);
+        
+        
     }
 }

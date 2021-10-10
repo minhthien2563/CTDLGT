@@ -13,6 +13,9 @@ public class sinhVien {
         country = c;
     }
 
+    sinhVien() {
+        
+    }
 
     void inThongTin() {
         System.out.println("MSSV: " + mssv);

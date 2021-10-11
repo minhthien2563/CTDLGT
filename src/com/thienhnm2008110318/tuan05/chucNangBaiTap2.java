@@ -1,6 +1,7 @@
 package com.thienhnm2008110318.tuan05;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class chucNangBaiTap2 {
@@ -21,34 +22,38 @@ public class chucNangBaiTap2 {
             System.out.println("5. Xoá");
             select = input.nextInt();
             input.nextLine();
-        } while (1 < select || select > 5);
 
-        System.out.println("Selected " + select);
-        switch(select) {
-            case 1: {
-                System.out.print("Vui lòng nhập họ và tên: ");
-                String name = input.nextLine();
+            switch(select) {
+                case 1: {
+                    System.out.print("Vui lòng nhập họ và tên: ");
+                    String name = input.nextLine();
+    
+                    Nhap(name);
+                    break;
+                }
+                case 2: {
+                    Xuat();
+                    break;
+                }
+                case 3: {
+                    SapXep();
+                    break;
+                }
+                case 4: {
+                    XuatNgauNhien();
+                    break;
+                }
+                case 5: {
+                    System.out.print("Vui lòng nhập họ và tên muốn xoá: ");
+                    String name_remove = input.nextLine();
 
-                Nhap(name);
-                break;
+                    Xoa(name_remove);
+                    break;
+                }
             }
-            case 2: {
-                System.out.println("test");
 
-                Xuat();
-                break;
-            }
-            case 3: {
-                System.out.println("test 3");
-                break;
-            }
-            case 4: {
-                System.out.println("test 4");
-            }
-            case 5: {
-
-            }
-        }
+        } while (select >= 1 && select <= 5);
+        
         input.close();
     }
 
@@ -57,16 +62,39 @@ public class chucNangBaiTap2 {
     public void Nhap(String name) {
         list.add(name);
         System.out.println("Đã thêm '" + name + "' vào danh sách!");
-
-        // menu();
     }
 
     public void Xuat() {
         System.out.println("Xuất danh sách");
-        // for (String i : list) {
-        //     System.out.println(i);
-        // }
-        // menu();
+        for (String i : list) {
+            System.out.println(i);
+        }
+    }
 
+    public void SapXep() {
+        Collections.sort(list);
+        Collections.reverse(list);
+        System.out.println("Đã sắp xếp lại thứ tự danh sách!");
+    }
+
+    public void XuatNgauNhien() {
+        Collections.shuffle(list);
+        System.out.println("Đã sắp xếp ngẫu nhiên danh sách!");
+    }
+
+    public void Xoa(String name_remove) {
+        boolean remove = false;
+        String name_check;
+        for (int i = 0; i < list.size(); i++) {
+            name_check = list.get(i);
+            if (name_check.equalsIgnoreCase(name_remove)) {
+                list.remove(name_check);
+                remove = true;
+            }
+        }
+        if (!remove)
+            System.out.println("Không tìm thấy tên này trong danh sách để xoá.");
+        else
+            System.out.println("Đã xoá " + name_remove + " khỏi danh sách!");
     }
 }

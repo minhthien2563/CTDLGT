@@ -2,6 +2,7 @@ package com.thienhnm2008110318.kiemtragiuaky;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class testDrive {
 
@@ -13,7 +14,6 @@ public class testDrive {
 
     static void inputInfo() {
         
-
         String break_out;
 
         while (true) {

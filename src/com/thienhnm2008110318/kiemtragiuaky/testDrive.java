@@ -85,6 +85,6 @@ public class testDrive {
                 }
             }
 
-        } while (select >= 1 && select <= 5);
+        } while (select >= 1 && select <= 3);
     }
 }

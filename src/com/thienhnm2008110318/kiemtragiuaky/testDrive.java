@@ -95,7 +95,7 @@ public class testDrive {
 
             switch(select) {
                 case 1: {
-                    inputInfo(false, false);
+                    inputInfo(false, false, false);
                 }
                 case 2: {
                     System.out.print("Hãy nhập màu sác loại táo cần tìm (Yellow, Blue, Red): ");
@@ -107,13 +107,13 @@ public class testDrive {
                     printInfo();
                 }
                 case 4: {
-                    input
+                    inputInfo(true, false, false);
                 }
                 case 5: {
-                    inputInfo(true, true);
+                    inputInfo(true, true, true);
                 }
                 case 6: {
-                    inputInfo(true, false);
+                    inputInfo(true, true, false);
                 }
                 case 7: {
                     System.out.print("Hãy nhập mã số táo cần tìm: ");

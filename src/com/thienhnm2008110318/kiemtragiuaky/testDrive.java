@@ -10,9 +10,11 @@ public class testDrive {
 
     static ArrayList<apple> apple_list = new ArrayList<>();
 
+    static LinkedList<apple> apple_linked_list = new LinkedList<>();
+
     static Scanner input = new Scanner(System.in);
 
-    static void inputInfo() {
+    static void inputInfo(boolean linkedlist, boolean first) {
         
         String break_out;
 
@@ -30,7 +32,16 @@ public class testDrive {
 
             System.out.println("Nhập N để huỷ, bấm phím bất kỳ để tiếp tục.");
             
-            apple_list.add(Apple);
+            if (!linkedlist) {
+                apple_list.add(Apple);
+                apple_linked_list.add(Apple);
+            } else {
+                if (first)
+                    apple_linked_list.addFirst(Apple);
+                else
+                    apple_linked_list.addLast(Apple);
+            }
+            
 
             break_out = input.nextLine();
             if (break_out.equalsIgnoreCase("N")) {
@@ -56,32 +67,59 @@ public class testDrive {
         }
     }
 
+    static void searchById(Integer find_id) {
+        for(apple i : apple_linked_list) {
+            if (i.id == find_id) {
+                System.out.println("ID " + i.id + " Khối lượng " + i.mass + " Màu sắc " + i.color);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Integer select;
         do {
             System.out.println("_______TUỲ CHỌN_______");
-            System.out.println("1. Nhập");
-            System.out.println("2. Tìm");
-            System.out.println("3. In");
+            System.out.println("1. Nhập táo vào danh sách");
+            System.out.println("2. Tìm với tên  trong danh sách");
+            System.out.println("3. In danh sách");
+            System.out.println("4. Nhập táo vào danh sách liên kết");
+            System.out.println("5. Thêm táo vào đầu danh sách liên kết");
+            System.out.println("6. Thêm táo vào cuối danh sách liên kết");
+            System.out.println("7. Tìm với mã số trong danh sách liên kết");
 
             select = input.nextInt();
             input.nextLine();
 
             switch(select) {
                 case 1: {
-                    inputInfo();
-                    break;
+                    inputInfo(false, false);
                 }
                 case 2: {
                     System.out.print("Hãy nhập màu sác loại táo cần tìm (Yellow, Blue, Red): ");
                     String find_color = input.nextLine();
 
                     searchByName(find_color);
-                    break;
                 }
                 case 3: {
                     printInfo();
-                    break;
+                }
+                case 4: {
+
+                }
+                case 5: {
+                    inputInfo(true, true);
+                }
+                case 6: {
+                    inputInfo(true, false);
+                }
+                case 7: {
+                    System.out.print("Hãy nhập mã số táo cần tìm: ");
+                    Integer find_id = input.nextInt();
+
+                    searchById(find_id);
+                }
+                case 8: {
+
                 }
             }
 

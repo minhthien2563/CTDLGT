@@ -14,7 +14,7 @@ public class testDrive {
 
     static Scanner input = new Scanner(System.in);
 
-    static void inputInfo(boolean linkedlist, boolean first) {
+    static void inputInfo(boolean linkedlist, boolean linkedlist_opt, boolean first) {
         
         String break_out;
 
@@ -32,14 +32,17 @@ public class testDrive {
 
             System.out.println("Nhập N để huỷ, bấm phím bất kỳ để tiếp tục.");
             
-            if (!linkedlist) {
+            if (!linkedlist)
                 apple_list.add(Apple);
-                apple_linked_list.add(Apple);
-            } else {
-                if (first)
-                    apple_linked_list.addFirst(Apple);
-                else
-                    apple_linked_list.addLast(Apple);
+            else {
+                if (!linkedlist_opt)
+                    apple_linked_list.add(Apple);
+                else {
+                    if (first)
+                        apple_linked_list.addFirst(Apple);
+                    else
+                        apple_linked_list.addLast(Apple);
+                    }
             }
             
 
@@ -104,7 +107,7 @@ public class testDrive {
                     printInfo();
                 }
                 case 4: {
-
+                    input
                 }
                 case 5: {
                     inputInfo(true, true);

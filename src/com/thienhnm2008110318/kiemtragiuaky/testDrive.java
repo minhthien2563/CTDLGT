@@ -13,7 +13,6 @@ public class testDrive {
 
     static void inputInfo() {
         
-
         String break_out;
 
         while (true) {

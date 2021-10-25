@@ -118,9 +118,6 @@ public class testDrive {
 
                     searchById(find_id);
                 }
-                case 8: {
-
-                }
             }
 
         } while (select >= 1 && select <= 3);

@@ -19,9 +19,12 @@ public class goods_application {
 
     public static void main(String[] args) {
 
-        
+        Goods = new goods();
+
+        System.out.println("###################################");
+        System.out.println("Ma san pham da duoc tao ngau nhien");
         for(int i = 0; i < 20; i++) {
-            Goods.id = app_function.randomString();
+            Goods.id = app_function.randomString(4);
 
             int index = random.nextInt(_type.length);
             Goods.type = _type[index];
@@ -46,7 +49,14 @@ public class goods_application {
             Goods.left_in_stock = random.nextInt(100);
             
             Goods.import_date = app_function.formatter.format(app_function.date);
+
+            System.out.println(Goods.id);
+
+            goods_list.add(Goods);
         }
+        System.out.println("###################################");
+
+        System.out.println("\n\n");
 
         app_function.Menu();
         

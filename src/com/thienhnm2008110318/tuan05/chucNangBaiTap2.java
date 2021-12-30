@@ -5,9 +5,6 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class chucNangBaiTap2 {
-    chucNangBaiTap2() {
-    }
-
     Scanner input = new Scanner(System.in);
 
     public void menu() {

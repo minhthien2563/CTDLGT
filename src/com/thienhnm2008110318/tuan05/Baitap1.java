@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Baitap1 {
-    static double sum;
     public static void main(String[] args) {
         System.out.println("Hãy nhập số cần thêm vào danh sách (số thực)");
 
@@ -22,14 +21,15 @@ public class Baitap1 {
             list.add(x);
             scanner.nextLine();
 
-            System.out.println("Để nhập thêm vui lòng nhập Y, nhấn phím bất kỳ để huỷ.");
+            System.out.println("Nhập N để huỷ, bấm phím bất kỳ để tiếp tục.");
             
             check = scanner.nextLine();
-            if (!check.equalsIgnoreCase("Y")) {
+            if (check.equalsIgnoreCase("N")) {
                 break;
             }
         }
 
+        double sum = 0.0;
         for (double i : list) {
             sum += i;
             System.out.println("Giá trị đã nhập " + i);

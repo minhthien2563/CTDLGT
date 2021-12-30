@@ -44,7 +44,7 @@ public class goods_application {
             }
 
             System.out.println(Goods.type);
-            
+
             System.out.println(Goods.name);
 
             Goods.price = random.nextInt(100000);
@@ -53,6 +53,7 @@ public class goods_application {
             
             Goods.import_date = app_function.formatter.format(app_function.date);
 
+            System.out.println(Goods.id);
 
             goods_list.add(Goods);
         }

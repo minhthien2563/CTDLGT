@@ -3,8 +3,6 @@ package com.thienhnm2008110318.kiemtracuoiky;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.Random;
-import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;  
 import java.util.Scanner;
 
@@ -16,7 +14,7 @@ public class app_function {
     static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
     static Date date = new Date();  
 
-    static String randomString(int n)
+    static String randomString(int n) //https://www.geeksforgeeks.org/generate-random-string-of-given-size-in-java/
     {
   
         // chose a Character random from this String

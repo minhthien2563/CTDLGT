@@ -13,14 +13,14 @@ public class goods_application {
     static Random random = new Random();
 
     static String[] _type = {"Thuc pham", "Sanh su", "Dien tu"};
-    static String[] food = {"Ca", "Ca rot", "Ga", "Thit heo"};
-    static String[] crockery = {"Chen", "Dia", "Ly"};
+    static String[] food = {"Cu cai", "Ca rot", "Thit bo", "Thit heo"};
+    static String[] crockery = {"Chen", "Dia", "Ly nuoc"};
     static String[] electronic = {"Dien thoai", "May tinh", "May lanh"};
 
     public static void main(String[] args) {
 
-        System.out.println("###################################");
-        System.out.println("Ma san pham da duoc tao ngau nhien");
+        System.out.println("############################################################### HANG HOA DUOC TAO NGAU NHIEN ####################################################################");
+        System.out.println("");
         for(int i = 0; i < 20; i++) {
             Goods = new goods();
             Goods.id = app_function.randomString(4);
@@ -49,11 +49,13 @@ public class goods_application {
             
             Goods.import_date = app_function.formatter.format(app_function.date);
 
-            System.out.println(Goods.id);
+            
+
+            System.out.printf("Id: " + Goods.id + "\t|\tLoai: " + Goods.type + "\t\t|\tTen: " + Goods.name + "\t|\tGia: " + Goods.price + "\t|\tTon kho: " + Goods.left_in_stock + "\t|\tNgay nhap: " + Goods.import_date + "\n");
 
             goods_list.add(Goods);
         }
-        System.out.println("###################################");
+        System.out.println("#####################################################################################################################################################################");
 
         System.out.println("\n\n");
 

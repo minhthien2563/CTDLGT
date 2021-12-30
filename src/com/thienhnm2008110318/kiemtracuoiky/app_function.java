@@ -11,7 +11,7 @@ public class app_function {
 
     static Scanner input = new Scanner(System.in);
 
-    static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+    static SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss - dd/MM/yyyy");  
     static Date date = new Date();  
 
     static String randomString(int n) //https://www.geeksforgeeks.org/generate-random-string-of-given-size-in-java/

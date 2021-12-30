@@ -87,6 +87,7 @@ public class app_function {
                 case "Edit": editGoods();
                 case "Delete": deleteGoods();
                 case "Find Type": findGoodsWithType();
+                case "Statistic" : statisticGoods();
             }
         } else Menu();
     }
@@ -326,9 +327,10 @@ public class app_function {
                         System.out.println("Gia hang hoa: " + index.price);
                         System.out.println("So luong trong kho: " + index.left_in_stock);
                         System.out.println("Ngay nhap hang: " + index.import_date);
-                        System.out.println("------\n");
+                        System.out.println("------------------------------------------\n");
                     }
                 }
+                break;
             }
             case 2: {
                 for(goods index : goods_application.goods_list) {
@@ -338,9 +340,10 @@ public class app_function {
                         System.out.println("Gia hang hoa: " + index.price);
                         System.out.println("So luong trong kho: " + index.left_in_stock);
                         System.out.println("Ngay nhap hang: " + index.import_date);
-                        System.out.println("------\n");
+                        System.out.println("------------------------------------------\n");
                     }
                 }
+                break;
             }
             case 3: {
                 for(goods index : goods_application.goods_list) {
@@ -350,9 +353,10 @@ public class app_function {
                         System.out.println("Gia hang hoa: " + index.price);
                         System.out.println("So luong trong kho: " + index.left_in_stock);
                         System.out.println("Ngay nhap hang: " + index.import_date);
-                        System.out.println("------\n");
+                        System.out.println("------------------------------------------\n");
                     }
                 }
+                break;
             }
         }
 
@@ -424,9 +428,9 @@ public class app_function {
         input.nextLine();
 
         switch(select) {
-            case 1: totalAmountGoods();
-            case 2: totalPriceGoods();
-            case 3: quantityEachGoods();
+            case 1: totalAmountGoods(); break;
+            case 2: totalPriceGoods(); break;
+            case 3: quantityEachGoods(); break;
         }
     }
 
@@ -436,6 +440,7 @@ public class app_function {
             total += index.left_in_stock;
         }
         System.out.println("Tong so luong hang hoa ton kho la " + total);
+        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
 
     public static void totalPriceGoods() {
@@ -444,6 +449,7 @@ public class app_function {
             total += index.price;
         }
         System.out.println("Tong so luong gia tri hang hoa la " + total);
+        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
     
     public static void quantityEachGoods() {
@@ -467,6 +473,7 @@ public class app_function {
                 }
 
                 System.out.println("Tong so luong ton kho cua hang hoa \"Thuc pham\" la " + total);
+                break;
             }
             case 2: {
                 for(goods index : goods_application.goods_list) {
@@ -476,6 +483,7 @@ public class app_function {
                 }
 
                 System.out.println("Tong so luong ton kho cua hang hoa \"Sanh su\" la " + total);
+                break;
             }
             case 3: {
                 for(goods index : goods_application.goods_list) {
@@ -485,7 +493,9 @@ public class app_function {
                 }
 
                 System.out.println("Tong so luong ton kho cua hang hoa \"Dien tu\" la " + total);
+                break;
             }
         }
+        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
 }

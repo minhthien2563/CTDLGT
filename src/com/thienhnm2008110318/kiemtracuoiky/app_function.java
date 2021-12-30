@@ -3,7 +3,8 @@ package com.thienhnm2008110318.kiemtracuoiky;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.List;
+import java.util.Random;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;  
 import java.util.Scanner;
 
@@ -14,6 +15,15 @@ public class app_function {
 
     static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
     static Date date = new Date();  
+
+    public static String randomString() {
+        byte[] array = new byte[4]; // length is bounded by 7
+        new Random().nextBytes(array);
+        String generatedString = new String(array, Charset.forName("UTF-8"));
+        
+        return generatedString;
+    }
+
 
     public static void Menu() {
         int selection;

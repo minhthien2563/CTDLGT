@@ -221,59 +221,60 @@ public class app_function {
 
         Goods = new goods();
 
+        goods goods_get = goods_application.goods_list.get(index);
+
         switch(select) {
             case 1: {
-                System.out.println("\n\n> Ten hang hoa hien tai la \"" + goods_application.goods_list.get(index).name + "\"");
+                System.out.println("\n\n> Ten hang hoa hien tai la \"" + goods_get.name + "\"");
                 System.out.print("Hay ten hang hoa ma ban muon thay doi: ");
 
                 Goods.name = input.nextLine();
-                Goods.type = goods_application.goods_list.get(index).type;
-                Goods.id = goods_application.goods_list.get(index).id;
-                Goods.price = goods_application.goods_list.get(index).price;
-                Goods.left_in_stock = goods_application.goods_list.get(index).left_in_stock;
-                Goods.import_date = goods_application.goods_list.get(index).import_date;
+                Goods.type = goods_get.type;
+                Goods.price = goods_get.price;
+                Goods.left_in_stock = goods_get.left_in_stock;
+
                 break;
             }
             case 2: {
-                System.out.println("\n\n> Loai hang hoa hien tai la \"" + goods_application.goods_list.get(index).type + "\"");
+                System.out.println("\n\n> Loai hang hoa hien tai la \"" + goods_get.type + "\"");
                 System.out.print("Hay nhap loai hang hoa ban muon thay doi: ");
 
                 Goods.type = input.nextLine();
-                Goods.name = goods_application.goods_list.get(index).name;
-                Goods.id = goods_application.goods_list.get(index).id;
-                Goods.price = goods_application.goods_list.get(index).price;
-                Goods.left_in_stock = goods_application.goods_list.get(index).left_in_stock;
-                Goods.import_date = goods_application.goods_list.get(index).import_date;
+                Goods.name = goods_get.name;
+                Goods.price = goods_get.price;
+                Goods.left_in_stock = goods_get.left_in_stock;
+
                 break;
             }
             case 3: {
-                System.out.println("\n\n> Gia hang hoa hien tai la \"" + goods_application.goods_list.get(index).price + "\"");
+                System.out.println("\n\n> Gia hang hoa hien tai la \"" + goods_get.price + "\"");
                 System.out.print("Hay nhap gia hang hoa ban muon thay doi: ");
 
                 Goods.price = input.nextInt();
                 input.nextLine();
-                Goods.type = goods_application.goods_list.get(index).type;
-                Goods.id = goods_application.goods_list.get(index).id;
-                Goods.name = goods_application.goods_list.get(index).name;
-                Goods.left_in_stock = goods_application.goods_list.get(index).left_in_stock;
-                Goods.import_date = goods_application.goods_list.get(index).import_date;
+                Goods.name = goods_get.name;
+                Goods.type = goods_get.type;
+                Goods.left_in_stock = goods_get.left_in_stock;
+
                 break;
             }
 
             case 4: {
-                System.out.println("\n\n> So luong ton kho hien tai la \"" + goods_application.goods_list.get(index).left_in_stock + "\"");
+                System.out.println("\n\n> So luong ton kho hien tai la \"" + goods_get.left_in_stock + "\"");
                 System.out.print("Hay nhap so luong ton kho hang hoa ban muon thay doi: ");
 
                 Goods.left_in_stock = input.nextInt();
                 input.nextLine();
-                Goods.price =goods_application.goods_list.get(index).price; 
-                Goods.type = goods_application.goods_list.get(index).type;
-                Goods.id = goods_application.goods_list.get(index).id;
-                Goods.name = goods_application.goods_list.get(index).name;
-                Goods.import_date = goods_application.goods_list.get(index).import_date;
+                Goods.name = goods_get.name;
+                Goods.type = goods_get.type;
+                Goods.price =goods_get.price; 
+                
                 break;
             }
         }
+
+        Goods.id = goods_get.id;
+        Goods.import_date = goods_get.import_date;
 
         goods_application.goods_list.set(index, Goods);
         System.out.println("\n\nDa dieu chinh thong tin hang hoa thanh cong!");
@@ -382,9 +383,9 @@ public class app_function {
 
             @Override
             public int compare(goods o1, goods o2) {
-                if (o1.getGoodsPrice() < o2.getGoodsPrice()) {
+                if (o1.getGoodsPrice() < o2.getGoodsPrice())
                     return -1;
-                } else {
+                else {
                     if (o1.getGoodsPrice() == o2.getGoodsPrice()) {
                         return 0;
                     } else
@@ -402,9 +403,9 @@ public class app_function {
 
             @Override
             public int compare(goods o1, goods o2) {
-                if (o1.getGoodsPrice() < o2.getGoodsPrice()) {
+                if (o1.getGoodsPrice() < o2.getGoodsPrice())
                     return 1;
-                } else {
+                else {
                     if (o1.getGoodsPrice() == o2.getGoodsPrice()) {
                         return 0;
                     } else
@@ -428,9 +429,17 @@ public class app_function {
         input.nextLine();
 
         switch(select) {
-            case 1: totalAmountGoods(); break;
-            case 2: totalPriceGoods(); break;
-            case 3: quantityEachGoods(); break;
+            case 1: 
+                totalAmountGoods(); 
+                break;
+                
+            case 2: 
+                totalPriceGoods(); 
+                break;
+
+            case 3: 
+                quantityEachGoods(); 
+                break;
         }
     }
 
@@ -440,7 +449,8 @@ public class app_function {
             total += index.left_in_stock;
         }
         System.out.println("Tong so luong hang hoa ton kho la " + total);
-        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
+
+        returnToSelect("Statistic", "\nDe tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
 
     public static void totalPriceGoods() {
@@ -449,7 +459,8 @@ public class app_function {
             total += index.price;
         }
         System.out.println("Tong so luong gia tri hang hoa la " + total);
-        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
+
+        returnToSelect("Statistic", "\nDe tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
     
     public static void quantityEachGoods() {

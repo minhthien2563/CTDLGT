@@ -43,10 +43,6 @@ public class goods_application {
                 Goods.name = electronic[j];
             }
 
-            System.out.println(Goods.type);
-
-            System.out.println(Goods.name);
-
             Goods.price = random.nextInt(100000);
             
             Goods.left_in_stock = random.nextInt(100);

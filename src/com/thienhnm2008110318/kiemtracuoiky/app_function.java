@@ -180,7 +180,7 @@ public class app_function {
             System.out.println("Ngay nhap hang: " + Goods.import_date);
             System.out.println("-----------------------------------\n");
 
-            returnToSelect("Insert", "De tiep tuc them hang hoa vui long nhap 1, de quay tro lai ve chuong trinh chinh vui long nhap bat ky.");
+            returnToSelect("Insert", "\nDe tiep tuc them hang hoa vui long nhap 1, de quay tro lai ve chuong trinh chinh vui long nhap bat ky.");
         } else {
             System.out.println("Da xay ra loi, vui long nhap lai.\n");
             insertGoods();
@@ -195,14 +195,14 @@ public class app_function {
         if (!checkExistId(id_to_find)) {
             System.out.println("(?) Khong tim thay hang hoa tuong ung voi ma nay.\n");
             
-            returnToSelect("Edit", "De tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
+            returnToSelect("Edit", "\nDe tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
         }
 
         int index = findGoodsWithId(id_to_find);
         if (index < 0) {
             System.out.println("(?) Loi khong xac dinh, vui long thu lai.\n");
 
-            returnToSelect("Edit", "De tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
+            returnToSelect("Edit", "\nDe tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
         }  
 
         int select;
@@ -288,7 +288,7 @@ public class app_function {
         System.out.println("Ngay nhap hang: " + Goods.import_date);
         System.out.println("-----------------------------------");
 
-        returnToSelect("Edit", "De tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
+        returnToSelect("Edit", "\nDe tiep tuc chinh sua hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
     }
 
     public static void deleteGoods() {
@@ -299,7 +299,7 @@ public class app_function {
         goods_application.goods_list.remove(findGoodsWithId(id));
         System.out.println("Da xoa hang hoa ra khoi he thong.\n");
 
-        returnToSelect("Delete", "De tiep tuc xoa hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
+        returnToSelect("Delete", "\nDe tiep tuc xoa hang hoa vui long nhap 1, de quay tro lai ve chuong trinh vui long nhap bat ky.");
     }
 
     public static void findGoodsWithType() {
@@ -361,7 +361,7 @@ public class app_function {
             }
         }
 
-        returnToSelect("Find Type", "De tiep tuc tim kiem san pham theo loai vui long nhap 1, de quay tro lai chuong trinh chinh vui long nhap bat ky.");
+        returnToSelect("Find Type", "\nDe tiep tuc tim kiem san pham theo loai vui long nhap 1, de quay tro lai chuong trinh chinh vui long nhap bat ky.");
     }
 
     public static void sortGoods() {
@@ -507,6 +507,6 @@ public class app_function {
                 break;
             }
         }
-        returnToSelect("Statistic", "De tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
+        returnToSelect("Statistic", "\nDe tiep tuc xem thong ke hang hoa vui long nhap 1, de quay ve chuong trinh chinh vui long nhap bat ky.");
     }
 }
